@@ -32,9 +32,17 @@ button {
     border-radius: 5px;
 }
 
-ul {
+table {
+    border: none;
+    border-collapse: collapse;
     color: white;
-    list-style-type: none;
+    margin-inline: auto;
+    text-align: center;
+    width: 80%;
+}
+
+th, td {
+    padding: 5px;
 }
 
 #increment-btn {
@@ -45,4 +53,8 @@ ul {
 #record-score-btn {
     background: black;
     border: 1px solid white;
+}
+
+#scoreboard-header-row {
+    border-bottom: 1px solid white;
 }

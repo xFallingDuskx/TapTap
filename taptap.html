@@ -8,7 +8,15 @@
         <button id="increment-btn" onclick="increment()">TAP</button>
         <button id="record-score-btn" onclick="record()">RECORD</button>
         <h1>Scoreboard:</h1>
-        <ul id="scoreboard-el"></ul>
+
+        <table id="scoreboard-el">
+            <tr id="scoreboard-header-row">
+                <th>User</th>
+                <th>Taps</th>
+                <th>Avg. Taps/Sec</th>
+            </tr>
+        </table>
+
         <script src="taptap.js"></script>
     </body>
 </html>

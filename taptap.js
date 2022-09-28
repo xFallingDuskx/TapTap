@@ -7,10 +7,15 @@ function increment() {
     countEl.innerText = count;
 }
 
-let scoreboardEl = document.getElementById("scoreboard-el");
-let roundNum = 0;
+function roundToTwo(num) {
+    return +(Math.round(num + "e+2")  + "e-2");
+}
 
+let scoreboardEl = document.getElementById("scoreboard-el");
+let user = "Username";
+
+let avg;
 function record() {
-    roundNum += 1;
-    scoreboardEl.innerHTML += ('<li> Round #'+roundNum + ' had a score of ' + count +'</li>');
+    avg = roundToTwo(count / 30);
+    scoreboardEl.innerHTML += ("<tr><td>" + user + "</td><td>" + count + "</td><td>" + avg + "</td></tr>");
 }
