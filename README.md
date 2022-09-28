@@ -4,7 +4,7 @@ A game where users tap a button as fast as they can within 30 seconds. Scores ca
 
 Based upon the [Passanger Counting](https://scrimba.com/learn/learnjavascript) app from Scrimba and modified.
 
-## Task
+## Tasks
 - [ ] Add basic 30 sec timer
 - [ ] Add timer selections in 15, 30, 45, and 60 second intervals
 - [ ] Change color of number for timer when at 10 seconds (orange) and 3 seconds (red)
