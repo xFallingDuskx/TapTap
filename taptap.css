@@ -56,7 +56,8 @@ table {
     width: 80%;
 }
 
-th, td {
+td,
+th {
     padding: 5px;
 }
 
@@ -73,6 +74,10 @@ form {
 #record-score-btn {
     background: black;
     border: 1px solid white;
+}
+
+#second-dialog-el {
+    display: none;
 }
 
 #scoreboard-header-row {
@@ -93,11 +98,11 @@ form {
     align-items: center;
 }
 
-#dialog-el {
+.dialog {
     background-color: black;
     border: 3px solid white;
     border-radius: 25px;
-    padding: 10px;
+    padding: 15px;
     width: 50%;
     height: fit-content;
     z-index: 2;

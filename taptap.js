@@ -1,29 +1,87 @@
-let user;
-let countdown;
-let limit;
+let avg,
+    countdown,
+    interval,
+    limit,
+    user;
+let count = 0;
+let countdownEl = document.getElementById("countdown-el");
+let countdownSecondDialogEl = document.getElementById(
+    "countdown-second-dialog-el"
+);
+let countEl = document.getElementById("count-el");
+let overlay = document.getElementById("overlay");
+let secondDialogEl = document.getElementById("second-dialog-el");
+let scoreboardEl = document.getElementById("scoreboard-el");
+let usernameSecondDialogEl = document.getElementById(
+    "username-second-dialog-el"
+);
+let welcomeDialogEl = document.getElementById("welcome-dialog-el");
+const availableUsernames = new Set([
+    "NoNameTapper",
+    "TipTapper",
+    "TappiestTapper",
+    "GhostTapper",
+    "FlashTapper",
+    "GrumpyTapper",
+    "EnergeticTapper",
+    "MarathonTapper",
+    "OutOfBreathTapper",
+    "FocusedTapper",
+    "UnderdogTapper",
+    "AnonymousTapper",
+    "MoonTapper",
+    "SunTapper",
+    "LazyTapper",
+    "ZigZagTapper",
+    "CasualTapper",
+    "TheBlimpTapper",
+    "SleepyTapper",
+    "TryHardTapper"
+]);
 
-function getUserInput() {
-    let inputs = prompt("Enter your name and desired time limit (greater than 0) separated by a common (i.e. User,15). Invalid or no input will result in the default of Nameless,30 being used :)", "User,15");
-
-    if (inputs === null) {
-        user = "Nameless";
-        countdown = 30;
-    } else {
-        inputs = inputs.split(",");
-        user = inputs[0] ?? "Nameless";
-        countdown = inputs[1] ?? 30;
-    }
-    
-    const correct = confirm("Welcome " + user + "! You have decided to tap like crazy for " + countdown + " seconds! If this is incorrect, press the cancel button to re-enter the information. If this is correct, get ready to tap tap away :) The timer will start after the first click on the 'Tap' button. ")
-
-    if (!correct) {
-        getUserInput();
-    }
+function getRandomInt() {
+    const length = availableUsernames.size;
+    return Math.floor(Math.random() * length);
 }
 
-let countdownEl = document.getElementById("countdown-el");
+function triggerSecondDialog() {
+    countdownSecondDialogEl.innerText = countdown;
+    usernameSecondDialogEl.innerText = user;
+    welcomeDialogEl.style.display = "none";
+    secondDialogEl.style.display = "block";
 
-let interval;
+    // close dialog with tap anywhere on screen
+    document
+        .body
+        .addEventListener('click', function () {
+            overlay.style.display = "none";
+        }, true);
+}
+
+function getUserInput() {
+    const randomUsername = [...availableUsernames][getRandomInt()];
+    const userInput = document
+        .getElementById("username")
+        .value;
+    console.log(userInput);
+    user = userInput === ""
+        ? randomUsername
+        : userInput;
+    console.log(user);
+    if (user === randomUsername) {
+        availableUsernames.delete(randomUsername);
+    }
+    const countdownInput = document.querySelector(
+        'input[name="countdown-time"]:checked'
+    );
+    countdown = countdownInput === null
+        ? 30
+        : countdownInput.value;
+    countdownEl.innerText = countdown;
+    limit = countdown;
+    triggerSecondDialog();
+}
+
 function countdownInterval() {
     if (countdown == 0) {
         clearInterval(interval);
@@ -37,9 +95,6 @@ function startCountdown() {
     interval = setInterval(countdownInterval, 1000);
 }
 
-let countEl = document.getElementById("count-el");
-let count = 0;
-
 function increment() {
     if (count == 0) {
         startCountdown();
@@ -50,12 +105,12 @@ function increment() {
 }
 
 function roundToTwo(num) {
-    return +(Math.round(num + "e+2")  + "e-2");
+    return + (Math.round(num + "e+2") + "e-2");
 }
 
-let scoreboardEl = document.getElementById("scoreboard-el");
-let avg;
 function record() {
     avg = roundToTwo(count / limit);
-    scoreboardEl.innerHTML += ("<tr><td>" + user + "</td><td>" + count + "</td><td>" + avg + "</td></tr>");
+    scoreboardEl.innerHTML += (
+        "<tr><td>" + user + "</td><td>" + count + "</td><td>" + avg + "</td></tr>"
+    );
 }

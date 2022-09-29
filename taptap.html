@@ -3,7 +3,8 @@
         <link rel="stylesheet" href="taptap.css">
     </head>
     <body>
-        <h3>Time Left: <span id="countdown-el"></span></h3>
+        <h3>Time Left:
+            <span id="countdown-el"></span></h3>
         <h1>Tap Count:</h1>
         <h2 id="count-el">0</h2>
         <button id="increment-btn" onclick="increment()">TAP</button>
@@ -19,23 +20,43 @@
         </table>
 
         <div id="overlay">
-            <div id="dialog-el">
+            <div id="welcome-dialog-el" class="dialog">
                 <h1>Welcome!</h1>
-                <h4>I'm glad you're ready to tap like crazy. Before starting, quickly enter your name and select your time limit. Oh, and prepare yourself - this is not for the weak of fingers.</h4>
-                <form>
-                    <br><label for="username">Username:</label><br>
-                    <input type="text" id="username" name="username" placeholder="NoNameTapper" autocomplete="off"><br><br>
+                <h4>I'm glad you're ready to tap like crazy. Before starting, quickly enter your
+                    name and select your time limit. If no input is given, you will be assigned a
+                    random Tapper name with a limit of 30 seconds. Now, prepare yourself - this is
+                    not for the weak of fingers.</h4>
+                <form action="javascript:getUserInput();">
+                    <br>
+                    <label for="username">Username:</label><br>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="user (18 char. max)"
+                        autocomplete="off"
+                        maxlength="18"><br><br>
                     <label for="time-limit">Time limit:</label><br>
-                    <input type="radio" name="time-limit" value="15">
+                    <input type="radio" name="countdown-time" value="15">
                     <label for="html">15 seconds</label><br>
-                    <input type="radio" name="time-limit" value="30">
+                    <input type="radio" name="countdown-time" value="30">
                     <label for="css">30 seconds</label><br>
-                    <input type="radio" name="time-limit" value="45">
+                    <input type="radio" name="countdown-time" value="45">
                     <label for="css">45 seconds</label><br>
-                    <input type="radio" name="time-limit" value="60">
+                    <input type="radio" name="countdown-time" value="60">
                     <label for="css">1 minute</label><br><br>
                     <input type="submit" value="Submit">
-                 </form>
+                </form>
+            </div>
+            <div id="second-dialog-el" class="dialog">
+                <h1>Alrighty
+                    <span id="username-second-dialog-el"></span></h1>
+                <br>
+                <h4>You have
+                    <span id="countdown-second-dialog-el"></span>
+                    seconds to tap tap as fast as you can! Once you press the 'Tap' button, the
+                    countdown will start. Ready? Great! Tap anywhere to exit and get started.</h4>
+                <br>
             </div>
         </div>
 
