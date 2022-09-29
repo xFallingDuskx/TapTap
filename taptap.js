@@ -9,6 +9,7 @@ let countdownSecondDialogEl = document.getElementById(
     "countdown-second-dialog-el"
 );
 let countEl = document.getElementById("count-el");
+let incrementBtn = document.getElementById("increment-btn");
 let overlay = document.getElementById("overlay");
 let secondDialogEl = document.getElementById("second-dialog-el");
 let scoreboardEl = document.getElementById("scoreboard-el");
@@ -63,11 +64,9 @@ function getUserInput() {
     const userInput = document
         .getElementById("username")
         .value;
-    console.log(userInput);
     user = userInput === ""
         ? randomUsername
         : userInput;
-    console.log(user);
     if (user === randomUsername) {
         availableUsernames.delete(randomUsername);
     }
@@ -85,6 +84,8 @@ function getUserInput() {
 function countdownInterval() {
     if (countdown == 0) {
         clearInterval(interval);
+        incrementBtn.onclick = null;
+        record();
         return;
     }
     countdown--;
@@ -113,4 +114,8 @@ function record() {
     scoreboardEl.innerHTML += (
         "<tr><td>" + user + "</td><td>" + count + "</td><td>" + avg + "</td></tr>"
     );
+}
+
+function playAgain() {
+    
 }

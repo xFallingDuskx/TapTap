@@ -71,9 +71,10 @@ form {
     color: black;
 }
 
-#record-score-btn {
+#play-again-btn {
     background: black;
     border: 1px solid white;
+    display: none;
 }
 
 #second-dialog-el {
