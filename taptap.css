@@ -75,6 +75,7 @@ form {
     background: black;
     border: 1px solid white;
     display: none;
+    margin: 5px auto auto;
 }
 
 #second-dialog-el {

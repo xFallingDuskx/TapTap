@@ -10,6 +10,7 @@ let countdownSecondDialogEl = document.getElementById(
 );
 let countEl = document.getElementById("count-el");
 let incrementBtn = document.getElementById("increment-btn");
+let playAgainBtn = document.getElementById("play-again-btn");
 let overlay = document.getElementById("overlay");
 let secondDialogEl = document.getElementById("second-dialog-el");
 let scoreboardEl = document.getElementById("scoreboard-el");
@@ -86,6 +87,7 @@ function countdownInterval() {
         clearInterval(interval);
         incrementBtn.onclick = null;
         record();
+        playAgainBtn.style.display = "block";
         return;
     }
     countdown--;
@@ -117,5 +119,5 @@ function record() {
 }
 
 function playAgain() {
-    
+
 }
