@@ -21,6 +21,13 @@ h2 {
     margin-bottom: 20px;
 }
 
+h3 {
+    color: white;
+    font-size: 30px;
+    opacity: 70%;
+    text-align: right;
+}
+
 button {
     border: none;
     padding-top: 10px;
