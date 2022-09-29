@@ -1,5 +1,6 @@
 let user;
 let countdown;
+let limit;
 
 function getUserInput() {
     let inputs = prompt("Enter your name and desired time limit (greater than 0) separated by a common (i.e. User,15). Invalid or no input will result in the default of Nameless,30 being used :)", "User,15");
@@ -21,18 +22,8 @@ function getUserInput() {
 }
 
 let countdownEl = document.getElementById("countdown-el");
-window.addEventListener("load", (event) => {
-    getUserInput();
-    countdownEl.innerText = countdown;
-});
-
-// window.onload = function () {
-//     getUserInput();
-//     countdownEl.innerText = countdown;
-// };
 
 let interval;
-let limit = countdown;
 function countdownInterval() {
     if (countdown == 0) {
         clearInterval(interval);

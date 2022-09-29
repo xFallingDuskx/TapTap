@@ -18,6 +18,27 @@
             </tr>
         </table>
 
+        <div id="overlay">
+            <div id="dialog-el">
+                <h1>Welcome!</h1>
+                <h4>I'm glad you're ready to tap like crazy. Before starting, quickly enter your name and select your time limit. Oh, and prepare yourself - this is not for the weak of fingers.</h4>
+                <form>
+                    <br><label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username" placeholder="NoNameTapper" autocomplete="off"><br><br>
+                    <label for="time-limit">Time limit:</label><br>
+                    <input type="radio" name="time-limit" value="15">
+                    <label for="html">15 seconds</label><br>
+                    <input type="radio" name="time-limit" value="30">
+                    <label for="css">30 seconds</label><br>
+                    <input type="radio" name="time-limit" value="45">
+                    <label for="css">45 seconds</label><br>
+                    <input type="radio" name="time-limit" value="60">
+                    <label for="css">1 minute</label><br><br>
+                    <input type="submit" value="Submit">
+                 </form>
+            </div>
+        </div>
+
         <script src="taptap.js"></script>
     </body>
 </html>
