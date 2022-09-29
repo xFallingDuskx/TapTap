@@ -13,3 +13,4 @@ Based upon the [Passanger Counting](https://scrimba.com/learn/learnjavascript) a
 - [ ] Tell user they can no longer tap when round is over
 - [x] Give greet screen to ask for user input
 - [ ] Highlight the row (user round) with highest # of taps / lowest avg.
+- [ ] Change app name to something better
