@@ -12,5 +12,6 @@ Based upon the [Passanger Counting](https://scrimba.com/learn/learnjavascript) a
 - [ ] Large count down numbers when count = 3
 - [ ] Tell user they can no longer tap when round is over
 - [x] Give greet screen to ask for user input
-- [ ] Highlight the row (user round) with highest # of taps / lowest avg.
+- [ ] Choose a color that fits monochrome theme
+    - [ ] Highlight the row (user round) with highest # of taps / lowest avg. with this color
 - [ ] Change app name to something better
