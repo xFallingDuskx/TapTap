@@ -9,8 +9,10 @@ let countdownSecondDialogEl = document.getElementById(
     "countdown-second-dialog-el"
 );
 let countEl = document.getElementById("count-el");
+let dialogEls = document.getElementsByClassName("dialog");
 let incrementBtn = document.getElementById("increment-btn");
 let playAgainBtn = document.getElementById("play-again-btn");
+let playAgainDialogEl = document.getElementById("play-again-dialog-el");
 let overlay = document.getElementById("overlay");
 let secondDialogEl = document.getElementById("second-dialog-el");
 let scoreboardEl = document.getElementById("scoreboard-el");
@@ -36,10 +38,20 @@ const availableUsernames = new Set([
     "LazyTapper",
     "ZigZagTapper",
     "CasualTapper",
-    "TheBlimpTapper",
+    "BlimpedTapper",
     "SleepyTapper",
     "TryHardTapper"
 ]);
+
+// close dialog with tap anywhere on screen
+function hidePopup() {
+    document
+    .body
+    .addEventListener('click', function () {
+        [...dialogEls].forEach(el => el.style.display = "none")
+        overlay.style.display = "none";
+    }, {once: true});
+}
 
 function getRandomInt() {
     const length = availableUsernames.size;
@@ -52,12 +64,7 @@ function triggerSecondDialog() {
     welcomeDialogEl.style.display = "none";
     secondDialogEl.style.display = "block";
 
-    // close dialog with tap anywhere on screen
-    document
-        .body
-        .addEventListener('click', function () {
-            overlay.style.display = "none";
-        }, true);
+    hidePopup();
 }
 
 function getUserInput() {
@@ -119,5 +126,25 @@ function record() {
 }
 
 function playAgain() {
+    count = 0;
+    overlay.style.display = "flex";
+    playAgainDialogEl.style.display = "block";
+}
 
+function reset() {
+    countdown = limit;
+    countdownEl.innerText = limit;
+    countEl.innerText = count;
+    incrementBtn.onclick = increment;
+}
+
+function playAgainKeep() {
+    reset();
+    hidePopup();
+}
+
+function playAgainChange() {
+    playAgainDialogEl.style.display = "none";
+    welcomeDialogEl.style.display = "block";
+    reset();
 }

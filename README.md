@@ -7,8 +7,8 @@ Based upon the [Passanger Counting](https://scrimba.com/learn/learnjavascript) a
 ## Tasks
 - [x] Add basic 30 sec timer
 - [x] Add timer selections in 15, 30, 45, and 60 second intervals
-- [ ] Play again functionality
-    - [ ] Option to keep same user or change for next round
+- [x] Play again functionality
+    - [x] Option to keep same user or change for next round
 - [ ] Large count down numbers when count = 3
 - [ ] Tell user they can no longer tap when round is over
 - [x] Give greet screen to ask for user input

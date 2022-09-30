@@ -78,12 +78,26 @@ form {
     margin: 5px auto auto;
 }
 
+#keep-btn {
+    background: whitesmoke;
+    color: black;
+}
+
+#change-btn {
+    background: grey;
+    border: 1px solid white;
+}
+
 #second-dialog-el {
     display: none;
 }
 
 #scoreboard-header-row {
     border-bottom: 1px solid white;
+}
+
+#play-again-dialog-el {
+    display: none;
 }
 
 #overlay {
@@ -108,4 +122,10 @@ form {
     width: 50%;
     height: fit-content;
     z-index: 2;
+}
+
+.play-again-option-btns {
+    width: 80px;
+    max-height: fit-content;
+    margin: 30px 10px auto;
 }

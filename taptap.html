@@ -21,7 +21,7 @@
 
         <div id="overlay">
             <div id="welcome-dialog-el" class="dialog">
-                <h1>Welcome!</h1>
+                <h1>Tap of the Morning to Ya!</h1>
                 <h4>I'm glad you're ready to tap like crazy. Before starting, quickly enter your
                     name and select your time limit. If no input is given, you will be assigned a
                     random Tapper name with a limit of 30 seconds. Now, prepare yourself - this is
@@ -37,6 +37,10 @@
                         autocomplete="off"
                         maxlength="18"><br><br>
                     <label for="time-limit">Time limit:</label><br>
+                    <input type="radio" name="countdown-time" value="5">
+                    <label for="html">5 seconds</label><br>
+                    <input type="radio" name="countdown-time" value="10">
+                    <label for="html">10 seconds</label><br>
                     <input type="radio" name="countdown-time" value="15">
                     <label for="html">15 seconds</label><br>
                     <input type="radio" name="countdown-time" value="30">
@@ -57,6 +61,13 @@
                     seconds to tap tap as fast as you can! Once you press the 'Tap' button, the
                     countdown will start. Ready? Great! Tap anywhere to exit and get started.</h4>
                 <br>
+            </div>
+            <div id="play-again-dialog-el" class="dialog">
+                <h1>Fingers aren't tired?</h1>
+                <h4>Well I'm glad to hear that you still have the energy to tap away! If you'd like to keep the same name and time limit, simply tap 'Keep'. Otherwise, tap 'Change' and we'll get you quickly set up. </h4>
+                <button id="keep-btn" class="play-again-option-btns" onclick="playAgainKeep()">KEEP</button>
+                <button id="change-btn" class="play-again-option-btns" onclick="playAgainChange()">CHANGE</button>
+                </form>
             </div>
         </div>
 
