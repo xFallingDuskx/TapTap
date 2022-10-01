@@ -4,4 +4,4 @@ A game where users tap a button as fast as they can within set intervals (5, 10,
 
 Based upon the [Passanger Counting](https://scrimba.com/learn/learnjavascript) app from Scrimba and modified.
 
-Final result can be viewed [here](https://xfallingduskx.github.io/TapTap/)
+Final result can be viewed [here](https://xfallingduskx.github.io/TapTap/).
