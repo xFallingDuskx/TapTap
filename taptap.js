@@ -58,6 +58,7 @@ function getRandomInt() {
     return Math.floor(Math.random() * length);
 }
 
+// Dialog that appears after welcome dialog
 function triggerSecondDialog() {
     countdownSecondDialogEl.innerText = countdown;
     usernameSecondDialogEl.innerText = user;
@@ -66,6 +67,7 @@ function triggerSecondDialog() {
     hidePopup();
 }
 
+// User input from form in welcome dialog
 function getUserInput() {
     const randomUsername = [...availableUsernames][getRandomInt()];
     const userInput = document
@@ -88,6 +90,7 @@ function getUserInput() {
     triggerSecondDialog();
 }
 
+// Countdown function ran at each second interval
 function countdownInterval() {
     if (countdown == 0) {
         clearInterval(interval);
@@ -112,10 +115,12 @@ function increment() {
     countEl.innerText = count;
 }
 
+// Round average to two decimal places
 function roundToTwo(num) {
     return + (Math.round(num + "e+2") + "e-2");
 }
 
+// Add recent round to scoreboard
 function record() {
     avg = roundToTwo(count / limit);
     scoreboardEl.innerHTML += (
@@ -129,6 +134,7 @@ function playAgain() {
     playAgainDialogEl.style.display = "block";
 }
 
+// Reset info for next round
 function reset() {
     countdown = limit;
     countdownEl.innerText = limit;
