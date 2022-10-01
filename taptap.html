@@ -9,6 +9,7 @@
         <h2 id="count-el">0</h2>
         <button id="increment-btn" onclick="increment()">TAP</button>
         <button id="play-again-btn" onclick="playAgain()">PLAY AGAIN?</button>
+        <br><br>
         <h1>Scoreboard:</h1>
 
         <table id="scoreboard-el">
@@ -64,13 +65,19 @@
             </div>
             <div id="play-again-dialog-el" class="dialog">
                 <h1>Fingers aren't tired?</h1>
-                <h4>Well I'm glad to hear that you still have the energy to tap away! If you'd like to keep the same name and time limit, simply tap 'Keep'. Otherwise, tap 'Change' and we'll get you quickly set up. </h4>
+                <h4>Well I'm glad to hear that you still have the energy to tap away! If you'd
+                    like to keep the same name and time limit, simply tap 'Keep'. Otherwise, tap
+                    'Change' and we'll get you quickly set up.
+                </h4>
                 <button id="keep-btn" class="play-again-option-btns" onclick="playAgainKeep()">KEEP</button>
-                <button id="change-btn" class="play-again-option-btns" onclick="playAgainChange()">CHANGE</button>
-                </form>
-            </div>
+                <button
+                    id="change-btn"
+                    class="play-again-option-btns"
+                    onclick="playAgainChange()">CHANGE</button>
+            </form>
         </div>
+    </div>
 
-        <script src="taptap.js"></script>
-    </body>
+    <script src="taptap.js"></script>
+</body>
 </html>

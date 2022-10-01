@@ -46,11 +46,11 @@ const availableUsernames = new Set([
 // close dialog with tap anywhere on screen
 function hidePopup() {
     document
-    .body
-    .addEventListener('click', function () {
-        [...dialogEls].forEach(el => el.style.display = "none")
-        overlay.style.display = "none";
-    }, {once: true});
+        .body
+        .addEventListener('click', function () {
+            [...dialogEls].forEach(el => el.style.display = "none")
+            overlay.style.display = "none";
+        }, {once: true});
 }
 
 function getRandomInt() {
@@ -63,7 +63,6 @@ function triggerSecondDialog() {
     usernameSecondDialogEl.innerText = user;
     welcomeDialogEl.style.display = "none";
     secondDialogEl.style.display = "block";
-
     hidePopup();
 }
 
@@ -109,7 +108,6 @@ function increment() {
     if (count == 0) {
         startCountdown();
     }
-
     count += 1;
     countEl.innerText = count;
 }
