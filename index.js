@@ -60,8 +60,8 @@ function getRandomInt() {
 
 // Dialog that appears after welcome dialog
 function triggerSecondDialog() {
-    countdownSecondDialogEl.innerText = countdown;
-    usernameSecondDialogEl.innerText = user;
+    countdownSecondDialogEl.textContent = countdown;
+    usernameSecondDialogEl.textContent = user;
     welcomeDialogEl.style.display = "none";
     secondDialogEl.style.display = "block";
     hidePopup();
@@ -85,7 +85,7 @@ function getUserInput() {
     countdown = countdownInput === null
         ? 30
         : countdownInput.value;
-    countdownEl.innerText = countdown;
+    countdownEl.textContent = countdown;
     limit = countdown;
     triggerSecondDialog();
 }
@@ -100,7 +100,7 @@ function countdownInterval() {
         return;
     }
     countdown--;
-    countdownEl.innerText = countdown;
+    countdownEl.textContent = countdown;
 }
 
 function startCountdown() {
@@ -112,7 +112,7 @@ function increment() {
         startCountdown();
     }
     count += 1;
-    countEl.innerText = count;
+    countEl.textContent = count;
 }
 
 // Round average to two decimal places
@@ -137,8 +137,8 @@ function playAgain() {
 // Reset info for next round
 function reset() {
     countdown = limit;
-    countdownEl.innerText = limit;
-    countEl.innerText = count;
+    countdownEl.textContent = limit;
+    countEl.textContent = count;
     incrementBtn.onclick = increment;
 }
 
